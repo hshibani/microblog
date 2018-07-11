@@ -1,0 +1,35 @@
+routes.py - view function that handles actions
+Web form class - app/forms.py
+To display the above web form on a web page - templates/*.html
+
+
+flask command relies on FLASK_APP environment variable to know the location of the application
+flask run - sub command native to Flask to run the application
+flask db - to manage everything related to database migrations
+flask db init - create a migration repository
+flask db migrate -m "users table" - add the User model to the migration script/generates the migration script. This is executed everythime there is a change in the database schema/application models
+The command output will tell where it wrote the migration script
+To make changes to the db, 
+flask db upgrade
+To undo the last migration, 
+flask db downgrade
+
+Adding date to the database:
+>>> from app import db
+>>> from app.models import User, Post
+
+>>> u = User(username='john', email='john@example.com')
+>>> db.session.add(u)
+>>> db.session.commit()
+Flask-SQLAlchemy documentation - http://flask-sqlalchemy.pocoo.org/2.3/
+
+
+
+
+Flask Extensions installed and used:
+After installing an extension, it has to be created and initialized in __init__.py
+flask-login
+flask-sqlalchemy
+flask-migrate
+
+
